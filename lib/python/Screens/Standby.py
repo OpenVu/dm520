@@ -30,6 +30,8 @@ QUIT_MANUFACTURER_RESET = 7
 QUIT_MAINT = 16
 QUIT_UPGRADE_PROGRAM = 42
 QUIT_IMAGE_RESTORE = 43
+QUIT_REBOOT_ANDROID = 12
+QUIT_REBOOT_RECOVERY = 17
 
 def isInfoBarInstance():
 	global infoBarInstance
@@ -249,6 +251,8 @@ class QuitMainloopScreen(Screen):
 			QUIT_UPGRADE_FP: _("Your frontprocessor will be updated\nPlease wait until your receiver reboots\nThis may take a few minutes"),
 			QUIT_ERROR_RESTART: _("The user interface of your receiver is restarting\ndue to an error in mytest.py"),
 			QUIT_DEBUG_RESTART: _("The user interface of your receiver is restarting in debug mode"),
+			QUIT_REBOOT_ANDROID: _("Your receiver is rebooting into android mode"),
+			QUIT_REBOOT_RECOVERY: _("Your receiver is rebooting into recovery mode"),
 			QUIT_UPGRADE_PROGRAM: _("Unattended update in progress\nPlease wait until your receiver reboots\nThis may take a few minutes"),
 			QUIT_MANUFACTURER_RESET: _("Manufacturer reset in progress\nPlease wait until enigma2 restarts")
 		}.get(retvalue)
@@ -291,6 +295,8 @@ class TryQuitMainloop(MessageBox):
 				QUIT_RESTART: _("Really restart now?"),
 				QUIT_UPGRADE_FP: _("Really update the frontprocessor and reboot now?"),
 				QUIT_DEBUG_RESTART: _("Really restart in debug mode now?"),
+				QUIT_REBOOT_ANDROID: _("Really reboot into android mode?"),
+				QUIT_REBOOT_RECOVERY: _("Really reboot into recovery mode?"),
 				QUIT_UPGRADE_PROGRAM: _("Really update your settop box and reboot now?"),
 				QUIT_MANUFACTURER_RESET: _("Really perform a manufacturer reset now?")
 			}.get(retvalue, None)
