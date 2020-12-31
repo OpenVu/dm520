@@ -62,7 +62,7 @@ while : ; do
 	# 42 - offline update
 	# 43 - restart for autoinstall
 	# 12 - Reboot to android
-	# 16 - Reboot to recovery
+	# 17 - Reboot to recovery
 	#
 	# >128 signal
 
@@ -108,7 +108,7 @@ while : ; do
 			[ -e /usr/sbin/fw_setenv ] && /usr/sbin/fw_setenv bootfromnand 1
 			/sbin/reboot
 			;;
-		16)
+		17)
 			if [ -e /dev/block/by-name/bootoptions ]; then
 				mkdir -p /tmp/bootoptions
 				mount /dev/block/by-name/bootoptions /tmp/bootoptions
